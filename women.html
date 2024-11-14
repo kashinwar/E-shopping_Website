@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<!-- bootstarp -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+    integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"
+    integrity="sha512-X/YkDZyjTf4wyc2Vy16YGCPHwAY8rZJY+POgokZjQB2mhIRFJCckEGc6YyX9eNsPfn0PzThEuNs+uaomE5CO6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- FontAwesome -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+    integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- AOS  -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+<style>
+    /* Make the navbar fixed top */
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    /* Style the search bar and icons */
+    .form-inline {
+        display: flex;
+        align-items: center;
+    }
+
+    .form-control {
+        width: 200px;
+    }
+
+    .icons {
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
+    }
+
+    .icons i {
+        margin-right: 1rem;
+    }
+
+    /* Media query for small screens */
+    @media (max-width: 768px) {
+        .form-inline {
+            flex-direction: column;
+        }
+
+        .form-control {
+            width: 100%;
+        }
+
+        .icons {
+            margin-top: 1rem;
+        }
+    }
+
+    /* <!-- Add CSS styles to sectiion after navbar --> */
+    .options-section {
+        
+        background-color: #f7f7f7;
+        padding-top: 20px;
+        width: 70%;
+        height: 9vh;
+        margin: 0 auto;
+        margin-top: 50px;
+        z-index: 1;
+    }
+
+    .options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .options button {
+        margin-right: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .options-section {
+            width: 100%;
+            height: 15vh;
+        }
+
+        .options {
+            flex-wrap: wrap;
+        }
+
+        .options button {
+            margin-bottom: 10px;
+        }
+
+       
+    }
+</style>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-subtle ">
+        <a class="navbar-brand font-weight-bold" style="font-size: 30px;" href="#">Lenovex </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="form-inline ml-auto">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+                <div class="icons">
+                    <a href=""><i class="fas fa-heart mx-3 navbar-brand"></i></a>
+                    <a href=""><i class="fas fa-shopping-basket mx-3 navbar-brand"></i></a>
+                    <a href="index.html"> <i class="fas fa-arrow-left mx-3 navbar-brand"></i></a>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+
+    <section class="options-section container">
+        <div class="row justify-content-center">
+            <div class="col-md-7 options">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sort
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="sortDropdown">
+                        <a class="dropdown-item" href="#">Price: Low to High</a>
+                        <a class="dropdown-item" href="#">Price: High to Low</a>
+                        <a class="dropdown-item" href="#">Rating</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="priceDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Price
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="priceDropdown">
+                      <a class="dropdown-item" href="#">$0 - $50</a>
+                      <a class="dropdown-item" href="#">$50 - $100</a>
+                      <a class="dropdown-item" href="#">$100 - $200</a>
+                    </div>
+                  </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="categoryDropdown"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Category
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="categoryDropdown">
+                        <a class="dropdown-item" href="#">Electronics</a>
+                        <a class="dropdown-item" href="#">Fashion</a>
+                        <a class="dropdown-item" href="#">Home & Kitchen</a>
+                    </div>
+                </div>
+                <button class="btn btn-secondary" type="button">Filter</button>
+            </div>
+        </div>
+    </section>
+    
+
+</body>
+
+</html>
+
+<script>
+    // Toggle the navbar collapse on click
+    $('.navbar-toggler').on('click', function () {
+        $('.navbar-collapse').toggleClass('show');
+    });
+
+    // Add event listener to the search button
+    $('.btn-outline-success').on('click', function (e) {
+        e.preventDefault();
+        // Add your search functionality here
+        console.log('Search button clicked!');
+    });
+
+
+    // <!-- Add jQuery code after navbar -->
+
+    $(document).ready(function() {
+  $(document).on('click', function(event) {
+    if ($(event.target).closest('.dropdown').length === 0 && !$(event.target).is('button')) {
+      $('.dropdown-menu').hide();
+    }
+  });
+  $('.dropdown-toggle').on('click', function(event) {
+    event.preventDefault();
+    $('.dropdown-menu').hide(); // Hide all dropdown menus
+    $(this).next('.dropdown-menu').toggle(); // Toggle the dropdown menu of the button that was clicked
+  });
+});
+</script>
+
+</html>

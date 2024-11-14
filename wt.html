@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagonal Image Slider</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<!-- bootstarp -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+    integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"
+    integrity="sha512-X/YkDZyjTf4wyc2Vy16YGCPHwAY8rZJY+POgokZjQB2mhIRFJCckEGc6YyX9eNsPfn0PzThEuNs+uaomE5CO6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- FontAwesome -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+    integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- AOS  -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+
+<style>
+    /* styles.css */
+    body {
+        margin: 0;
+        /* overflow-x: hidden; */
+        background-color: #f0f0f0;
+    }
+
+    .container {
+        width: 100%;
+        padding: 1 15px;
+        height: 100vh;
+    }
+
+    .slider {
+        position: relative;
+        width: 80vk;
+        height: 90vh;
+        margin: 0 auto;
+        /* overflow: hidden; */
+    }
+
+    .image-container {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .slider-image {
+        position: absolute;
+        cursor: pointer;
+        transition: transform 0.8s ease, z-index 0s;
+        max-width: 100%;
+        max-height: 100%;
+        transform: translate(-40em, -10em);
+        /* Start position off-screen */
+    }
+
+    .image-centered {
+        z-index: 10;
+        transform: translate(0, 0) scale(1.5);
+        /* Centered and scaled */
+    }
+
+    @media (max-width: 768px) {
+        .slider {
+            width: 80%;
+            height: 60vh;
+        }
+        .image-container{
+            flex-direction: row;
+        }
+
+        .slider-image {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .image-centered {
+            transform: translate(0, 0) scale(1.3);
+        }
+    }
+
+  
+
+    @media (max-width: 576px) {
+        .slider {
+            width: 90%;
+            height: 50vh;
+        }
+        .image-container{
+            flex-direction: column;
+        }
+
+
+        .slider-image {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+
+        .image-centered {
+            transform: translate(0, 0) scale(1.2);
+        }
+    }
+
+    @media (max-width: 320px) {
+        .slider {
+            width: 100%;
+            height: 40vh;
+        }
+
+        .image-container{
+            flex-direction: column;
+        }
+
+
+        .slider-image {
+            
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .image-centered {
+            transform: translate(0, 0) scale(1);
+        }
+    }
+
+
+    #second>img {
+        height: 400px;
+    }
+
+    .carousel-item {
+        height: 600px;
+        width: 300px;
+    }
+
+    .carousel-item img {
+        transition: 1s;
+        float: right;
+
+        filter: brightness(.5);
+    }
+</style>
+<section>
+
+    <body>
+        <div class="container container-fluid">
+                    <div class="slider">
+                        <div style="width: 100%;" class="image-container bg-danger  ">
+                            <div style="margin-left: 120px;" > <img src="RESOURCES/1.png" style="height: 40%;" alt="Image 1" class="slider-image "></div>
+                            <div style="margin-left: 140px;" > <img src="RESOURCES/3.png" style="height: 40%;" alt="Image 3" class="slider-image"> </div> 
+                            <div > <img src="RESOURCES/4.png" style="height: 40%;" alt="Image 3" class="slider-image "> </div> 
+                            <div > <img src="RESOURCES/5.png" style="height: 40%;" alt="Image 3" class="slider-image"> </div> 
+                            <div> <img src="RESOURCES/6.png" style="height: 40%;" alt="Image 3" class="slider-image "> </div> 
+                            <div > <img src="RESOURCES/7.png" style="height: 40%;" alt="Image 3" class="slider-image "> </div> 
+                            <div > <img src="RESOURCES/8.png" style="height: 40%;" alt="Image 3" class="slider-image  "> </div> 
+                            <div> <img src="RESOURCES/9.png" style="height: 40%;" alt="Image 3" class="slider-image"> </div> 
+
+                           
+                           
+                            <!-- Add more images as needed -->
+                </div>
+            </div>
+        </div>
+</section>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+</body>
+
+
+
+<script>
+    // script.js
+    $(document).ready(function () {
+        $('.slider-image').on('click', function () {
+            $('.slider-image').removeClass('image-centered');
+            var $this = $(this);
+            $this.addClass('image-centered');
+            $this.css('margin(20px)');
+
+            // Get the image offset and dimensions
+            var offset = $this.offset();
+            var imageWidth = $this.width();
+            var imageHeight = $this.height();
+
+            // Calculate the center of the window
+            var centerX = ($(window).width() - 7*imageWidth) / 2;
+            var centerY = ($(window).height() - 3*imageHeight) / 2;
+
+            // Set the image's transformation to move it from the left diagonal to the center
+            $this.css({
+                'transform': `translate(${centerX - offset.left}px, ${centerY - offset.top}px) scale(1.5)`
+
+            });
+        });
+    });
+
+</script>
+
+</html>
